@@ -13,8 +13,8 @@ jobs:
     
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
-      
+      uses: actions/checkout@v4
+
     - name: Install GraalVM JDK 17
       uses: graalvm/setup-graalvm@v1
       with:
@@ -25,9 +25,9 @@ jobs:
 
     - name: Setup Android SDK
       uses: android-actions/setup-android@v3
-        
+
     - name: Cache Maven dependencies
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: ~/.m2
         key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
@@ -39,18 +39,18 @@ jobs:
         mvn clean gluonfx:build -Pandroid
         
     - name: Upload APK
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: tablet-control-android
         path: gluon-crossplatform/target/gluonfx/aarch64-android/*.apk
         
     - name: Create Release
       if: github.ref == 'refs/heads/main'
-      uses: actions/create-release@v1
+      uses: softprops/action-gh-release@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         tag_name: v${{ github.run_number }}
-        release_name: Android APK v${{ github.run_number }}
-        draft: false
-        prerelease: false
+        name: Android APK v${{ github.run_number }}
+        body: Automatically generated Android APK build
+        files: gluon-crossplatform/target/gluonfx/aarch64-android/*.apk
