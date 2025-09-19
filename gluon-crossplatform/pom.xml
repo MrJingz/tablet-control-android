@@ -155,8 +155,8 @@
                     <target>${gluonfx.target}</target>
                     <mainClass>${main.class}</mainClass>
                     <verbose>true</verbose>
-                    <!-- 明确指定 GraalVM 路径 -->
-                    <graalvmHome>/opt/graalvm-ce-java11-22.3.3</graalvmHome>
+                    <!-- GraalVM 路径由 GitHub Actions 自动设置 -->
+                    <!-- <graalvmHome>/opt/graalvm-ce-java17-22.3.3</graalvmHome> -->
                     
                     <!-- 运行时参数 -->
                     <runtimeArgs>
