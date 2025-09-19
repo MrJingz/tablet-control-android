@@ -15,10 +15,16 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
+    - name: Set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+
     - name: Install GraalVM JDK 17
       uses: graalvm/setup-graalvm@v1
       with:
-        version: 'latest'
+        version: '22.3.3'
         java-version: '17'
         components: 'native-image'
         github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -42,10 +48,15 @@ jobs:
         echo "GRAALVM_HOME: $GRAALVM_HOME"
         echo "PATH: $PATH"
 
+    - name: Test Compilation First
+      run: |
+        cd gluon-crossplatform
+        mvn clean compile -X
+
     - name: Build Android APK
       run: |
         cd gluon-crossplatform
-        mvn clean gluonfx:build -Pandroid -X
+        mvn gluonfx:build -Pandroid -X
         
     - name: Upload APK
       uses: actions/upload-artifact@v4
