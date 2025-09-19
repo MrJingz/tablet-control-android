@@ -39,7 +39,7 @@
         <junit.version>5.8.2</junit.version>
         
         <!-- 应用程序配置 -->
-        <main.class>com.feixiang.tabletcontrol.CrossPlatformApp</main.class>
+        <main.class>com.feixiang.tabletcontrol.SimpleTestApp</main.class>
         <app.name>TabletControl</app.name>
         <app.version>1.0.0</app.version>
     </properties>
@@ -70,69 +70,77 @@
             <version>${javafx.version}</version>
         </dependency>
 
-        <!-- Gluon Mobile 核心依赖 -->
+        <!-- Gluon Mobile 核心依赖 - 暂时注释用于测试 -->
+        <!--
         <dependency>
             <groupId>com.gluonhq</groupId>
             <artifactId>charm-glisten</artifactId>
             <version>6.2.0</version>
         </dependency>
-        
-        <!-- Gluon Attach (平台特定功能) -->
+        -->
+
+        <!-- Gluon Attach (平台特定功能) - 暂时注释用于测试 -->
+        <!--
         <dependency>
             <groupId>com.gluonhq.attach</groupId>
             <artifactId>display</artifactId>
             <version>4.0.18</version>
         </dependency>
-        
+
         <dependency>
             <groupId>com.gluonhq.attach</groupId>
             <artifactId>lifecycle</artifactId>
             <version>4.0.18</version>
         </dependency>
-        
+
         <dependency>
             <groupId>com.gluonhq.attach</groupId>
             <artifactId>statusbar</artifactId>
             <version>4.0.18</version>
         </dependency>
-        
+
         <dependency>
             <groupId>com.gluonhq.attach</groupId>
             <artifactId>storage</artifactId>
             <version>4.0.18</version>
         </dependency>
+        -->
 
-        <!-- JSON 处理 -->
+        <!-- JSON 处理 - 暂时注释用于测试 -->
+        <!--
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>${jackson.version}</version>
         </dependency>
-        
+
         <dependency>
             <groupId>com.fasterxml.jackson.datatype</groupId>
             <artifactId>jackson-datatype-jsr310</artifactId>
             <version>${jackson.version}</version>
         </dependency>
-        
+
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
             <version>${gson.version}</version>
         </dependency>
+        -->
 
-        <!-- 日志框架 -->
+        <!-- 日志框架 - 暂时注释用于测试 -->
+        <!--
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
             <version>${slf4j.version}</version>
         </dependency>
-        
+
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
             <version>${logback.version}</version>
         </dependency>
+        -->
 
         <!-- 测试依赖 -->
         <dependency>
@@ -169,52 +177,10 @@
                     <!-- GraalVM 路径由 GitHub Actions 自动设置 -->
                     <!-- <graalvmHome>/opt/graalvm-ce-java17-22.3.3</graalvmHome> -->
                     
-                    <!-- 运行时参数 -->
+                    <!-- 简化配置用于测试 -->
                     <runtimeArgs>
                         <list>-Dfile.encoding=UTF-8</list>
-                        <list>-Duser.language=zh</list>
-                        <list>-Duser.country=CN</list>
                     </runtimeArgs>
-                    
-                    <!-- 资源配置 -->
-                    <resourcesList>
-                        <list>.*\.json$</list>
-                        <list>.*\.properties$</list>
-                        <list>.*\.fxml$</list>
-                        <list>.*\.css$</list>
-                        <list>.*\.(png|jpg|jpeg|gif|bmp)$</list>
-                    </resourcesList>
-                    
-                    <!-- 反射配置 -->
-                    <reflectionList>
-                        <list>com.feixiang.tabletcontrol.core.model.*</list>
-                        <list>com.feixiang.tabletcontrol.core.service.*</list>
-                        <list>com.feixiang.tabletcontrol.ui.*</list>
-                        <list>com.feixiang.tabletcontrol.platform.*</list>
-                        <list>com.fasterxml.jackson.databind.*</list>
-                        <list>com.google.gson.*</list>
-                        <list>javafx.scene.control.*</list>
-                        <list>javafx.scene.layout.*</list>
-                    </reflectionList>
-
-                    <!-- JNI 配置 -->
-                    <jniList>
-                        <list>java.lang.System</list>
-                        <list>java.io.File</list>
-                        <list>java.nio.file.*</list>
-                    </jniList>
-
-
-                    
-                    <!-- 平台特定配置 -->
-                    <bundlesList>
-                        <list>com.feixiang.tabletcontrol.i18n.messages</list>
-                    </bundlesList>
-
-                    <!-- 初始化时构建配置 -->
-                    <initBuildTimeList>
-                        <list>com.feixiang.tabletcontrol.platform.PlatformManager</list>
-                    </initBuildTimeList>
                 </configuration>
             </plugin>
 
