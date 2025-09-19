@@ -1,0 +1,56 @@
+name: Build Android APK
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build-android:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      
+    - name: Install GraalVM JDK 17
+      uses: graalvm/setup-graalvm@v1
+      with:
+        version: '22.3.3'
+        java-version: '17'
+        components: 'native-image'
+        set-java-home: 'true'
+
+    - name: Setup Android SDK
+      uses: android-actions/setup-android@v3
+        
+    - name: Cache Maven dependencies
+      uses: actions/cache@v3
+      with:
+        path: ~/.m2
+        key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+        restore-keys: ${{ runner.os }}-m2
+        
+    - name: Build Android APK
+      run: |
+        cd gluon-crossplatform
+        mvn clean gluonfx:build -Pandroid
+        
+    - name: Upload APK
+      uses: actions/upload-artifact@v3
+      with:
+        name: tablet-control-android
+        path: gluon-crossplatform/target/gluonfx/aarch64-android/*.apk
+        
+    - name: Create Release
+      if: github.ref == 'refs/heads/main'
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: v${{ github.run_number }}
+        release_name: Android APK v${{ github.run_number }}
+        draft: false
+        prerelease: false

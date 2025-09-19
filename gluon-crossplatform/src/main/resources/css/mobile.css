@@ -1,0 +1,403 @@
+/* 移动端样式 - 跨平台中控系统 */
+
+/* 移动端根布局 */
+.mobile-layout {
+    -fx-font-size: 16px;
+    -fx-spacing: 15px;
+    -fx-padding: 10px;
+    -fx-background-color: #f8f9fa;
+}
+
+/* 移动端工具栏 */
+.mobile-toolbar {
+    -fx-background-color: #2c3e50;
+    -fx-padding: 10px;
+    -fx-spacing: 15px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+}
+
+.toolbar-button {
+    -fx-min-width: 50px;
+    -fx-min-height: 50px;
+    -fx-font-size: 20px;
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-background-radius: 25px;
+    -fx-border-radius: 25px;
+    -fx-cursor: hand;
+}
+
+.toolbar-button:hover {
+    -fx-background-color: #2980b9;
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+
+.toolbar-button:pressed {
+    -fx-background-color: #21618c;
+    -fx-scale-x: 0.95;
+    -fx-scale-y: 0.95;
+}
+
+/* 移动端页面选择器 */
+.page-selector {
+    -fx-min-height: 50px;
+    -fx-font-size: 16px;
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-width: 2px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-padding: 10px 15px;
+}
+
+.page-selector:focused {
+    -fx-border-color: #3498db;
+    -fx-border-width: 3px;
+}
+
+.page-selector .arrow-button {
+    -fx-background-color: #ecf0f1;
+    -fx-border-color: #bdc3c7;
+    -fx-border-width: 0 0 0 2px;
+    -fx-background-radius: 0 8px 8px 0;
+}
+
+/* 移动端按钮样式 */
+.mobile-layout .button {
+    -fx-min-height: 50px;
+    -fx-font-size: 16px;
+    -fx-padding: 15px 25px;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-cursor: hand;
+}
+
+.mobile-layout .button:hover {
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+.mobile-layout .button:pressed {
+    -fx-scale-x: 0.95;
+    -fx-scale-y: 0.95;
+}
+
+/* 移动端文本框样式 */
+.mobile-layout .text-field {
+    -fx-min-height: 50px;
+    -fx-font-size: 16px;
+    -fx-padding: 15px;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-border-width: 2px;
+}
+
+.mobile-layout .text-field:focused {
+    -fx-border-width: 3px;
+    -fx-border-color: #3498db;
+}
+
+/* 移动端文本区域样式 */
+.mobile-layout .text-area {
+    -fx-min-height: 100px;
+    -fx-font-size: 16px;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-border-width: 2px;
+}
+
+.mobile-layout .text-area .content {
+    -fx-padding: 15px;
+}
+
+.mobile-layout .text-area:focused {
+    -fx-border-width: 3px;
+    -fx-border-color: #3498db;
+}
+
+/* 移动端标签样式 */
+.mobile-layout .label {
+    -fx-font-size: 16px;
+    -fx-padding: 10px 0px;
+    -fx-text-fill: #2c3e50;
+}
+
+.mobile-layout .label.title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-padding: 15px 0px;
+}
+
+.mobile-layout .label.subtitle {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-padding: 12px 0px;
+}
+
+.mobile-layout .label.caption {
+    -fx-font-size: 14px;
+    -fx-text-fill: #7f8c8d;
+    -fx-padding: 8px 0px;
+}
+
+/* 移动端画布样式 */
+.mobile-layout .canvas {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #bdc3c7;
+    -fx-border-width: 2px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+}
+
+.mobile-layout .canvas-scroll {
+    -fx-background-color: #f8f9fa;
+    -fx-border-color: #bdc3c7;
+    -fx-border-width: 2px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+}
+
+/* 移动端滚动条样式 */
+.mobile-layout .scroll-bar {
+    -fx-background-color: transparent;
+    -fx-pref-width: 12px;
+    -fx-pref-height: 12px;
+}
+
+.mobile-layout .scroll-bar .thumb {
+    -fx-background-color: #95a5a6;
+    -fx-background-radius: 6px;
+    -fx-min-width: 12px;
+    -fx-min-height: 12px;
+}
+
+.mobile-layout .scroll-bar .thumb:hover {
+    -fx-background-color: #7f8c8d;
+}
+
+.mobile-layout .scroll-bar .thumb:pressed {
+    -fx-background-color: #5d6d7e;
+}
+
+.mobile-layout .scroll-bar .increment-button,
+.mobile-layout .scroll-bar .decrement-button {
+    -fx-background-color: transparent;
+    -fx-pref-width: 0;
+    -fx-pref-height: 0;
+}
+
+/* 移动端状态栏样式 */
+.mobile-layout .status-bar {
+    -fx-background-color: #34495e;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 12px 15px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+}
+
+/* 移动端对话框样式 */
+.mobile-layout .dialog-pane {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-width: 2px;
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;
+    -fx-padding: 20px;
+}
+
+.mobile-layout .dialog-pane .header-panel {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+    -fx-padding: 0 0 15px 0;
+}
+
+.mobile-layout .dialog-pane .content {
+    -fx-font-size: 16px;
+    -fx-text-fill: #34495e;
+    -fx-padding: 10px 0;
+}
+
+.mobile-layout .dialog-pane .button-bar {
+    -fx-spacing: 15px;
+    -fx-padding: 15px 0 0 0;
+}
+
+/* 移动端菜单样式 */
+.mobile-layout .context-menu {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-width: 2px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-padding: 5px;
+}
+
+.mobile-layout .context-menu .menu-item {
+    -fx-min-height: 50px;
+    -fx-font-size: 16px;
+    -fx-padding: 15px 20px;
+    -fx-background-radius: 4px;
+}
+
+.mobile-layout .context-menu .menu-item:hover {
+    -fx-background-color: #ecf0f1;
+}
+
+.mobile-layout .context-menu .menu-item:pressed {
+    -fx-background-color: #d5dbdb;
+}
+
+/* 移动端选项卡样式 */
+.mobile-layout .tab-pane {
+    -fx-background-color: transparent;
+}
+
+.mobile-layout .tab-pane .tab-header-area {
+    -fx-padding: 0 0 10px 0;
+}
+
+.mobile-layout .tab-pane .tab {
+    -fx-min-height: 50px;
+    -fx-font-size: 16px;
+    -fx-padding: 15px 20px;
+    -fx-background-color: #ecf0f1;
+    -fx-text-fill: #2c3e50;
+    -fx-background-radius: 8px 8px 0 0;
+    -fx-border-color: #bdc3c7;
+    -fx-border-width: 2px 2px 0 2px;
+}
+
+.mobile-layout .tab-pane .tab:selected {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #2c3e50;
+    -fx-font-weight: bold;
+    -fx-border-color: #3498db;
+}
+
+.mobile-layout .tab-pane .tab:hover {
+    -fx-background-color: #d5dbdb;
+}
+
+/* 移动端进度条样式 */
+.mobile-layout .progress-bar {
+    -fx-min-height: 20px;
+    -fx-background-color: #ecf0f1;
+    -fx-border-color: #bdc3c7;
+    -fx-border-width: 1px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+}
+
+.mobile-layout .progress-bar .bar {
+    -fx-background-color: #3498db;
+    -fx-background-radius: 10px;
+    -fx-padding: 2px;
+}
+
+/* 移动端切换开关样式 */
+.mobile-layout .toggle-button {
+    -fx-min-width: 80px;
+    -fx-min-height: 50px;
+    -fx-font-size: 16px;
+    -fx-background-radius: 25px;
+    -fx-border-radius: 25px;
+    -fx-border-width: 2px;
+}
+
+.mobile-layout .toggle-button:selected {
+    -fx-background-color: #27ae60;
+    -fx-text-fill: white;
+    -fx-border-color: #27ae60;
+}
+
+.mobile-layout .toggle-button:not(:selected) {
+    -fx-background-color: #ecf0f1;
+    -fx-text-fill: #2c3e50;
+    -fx-border-color: #bdc3c7;
+}
+
+/* 移动端复选框样式 */
+.mobile-layout .check-box {
+    -fx-font-size: 16px;
+    -fx-spacing: 10px;
+}
+
+.mobile-layout .check-box .box {
+    -fx-min-width: 25px;
+    -fx-min-height: 25px;
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-width: 2px;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+}
+
+.mobile-layout .check-box:selected .box {
+    -fx-background-color: #3498db;
+    -fx-border-color: #3498db;
+}
+
+.mobile-layout .check-box:selected .mark {
+    -fx-background-color: white;
+    -fx-shape: "M2,6 L6,10 L14,2";
+}
+
+/* 移动端单选按钮样式 */
+.mobile-layout .radio-button {
+    -fx-font-size: 16px;
+    -fx-spacing: 10px;
+}
+
+.mobile-layout .radio-button .radio {
+    -fx-min-width: 25px;
+    -fx-min-height: 25px;
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-width: 2px;
+    -fx-background-radius: 12.5px;
+    -fx-border-radius: 12.5px;
+}
+
+.mobile-layout .radio-button:selected .radio {
+    -fx-background-color: #3498db;
+    -fx-border-color: #3498db;
+}
+
+.mobile-layout .radio-button:selected .dot {
+    -fx-background-color: white;
+    -fx-background-radius: 4px;
+}
+
+/* 移动端响应式间距 */
+.mobile-layout .vbox {
+    -fx-spacing: 15px;
+}
+
+.mobile-layout .hbox {
+    -fx-spacing: 15px;
+}
+
+/* 移动端触摸友好的最小尺寸 */
+.mobile-layout .button,
+.mobile-layout .text-field,
+.mobile-layout .combo-box,
+.mobile-layout .toggle-button {
+    -fx-min-height: 50px;
+}
+
+/* 移动端大字体支持 */
+@media (min-resolution: 2dppx) {
+    .mobile-layout {
+        -fx-font-size: 18px;
+    }
+    
+    .mobile-layout .button,
+    .mobile-layout .text-field,
+    .mobile-layout .combo-box {
+        -fx-min-height: 55px;
+    }
+}

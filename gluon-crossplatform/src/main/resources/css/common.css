@@ -1,0 +1,394 @@
+/* 通用样式 - 跨平台中控系统 */
+
+/* 根节点样式 */
+.root {
+    -fx-font-family: "System", "Microsoft YaHei", "SimHei", sans-serif;
+    -fx-font-size: 12px;
+    -fx-background-color: #f5f5f5;
+}
+
+/* 主根容器 */
+.main-root {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 1px;
+}
+
+/* 菜单栏样式 */
+.menu-bar {
+    -fx-background-color: #2c3e50;
+    -fx-border-color: #34495e;
+    -fx-border-width: 0 0 1px 0;
+}
+
+.menu-bar .menu {
+    -fx-text-fill: white;
+    -fx-font-weight: normal;
+}
+
+.menu-bar .menu:hover {
+    -fx-background-color: #34495e;
+}
+
+.menu-bar .menu-item {
+    -fx-text-fill: #2c3e50;
+    -fx-background-color: white;
+}
+
+.menu-bar .menu-item:hover {
+    -fx-background-color: #ecf0f1;
+}
+
+/* 工具箱样式 */
+.toolbox {
+    -fx-background-color: #ecf0f1;
+    -fx-border-color: #bdc3c7;
+    -fx-border-width: 0 1px 0 0;
+}
+
+.toolbox-title {
+    -fx-text-fill: #2c3e50;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+}
+
+.toolbox .button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-background-radius: 4px;
+    -fx-border-radius: 4px;
+    -fx-padding: 8px 12px;
+    -fx-font-size: 11px;
+}
+
+.toolbox .button:hover {
+    -fx-background-color: #2980b9;
+}
+
+.toolbox .button:pressed {
+    -fx-background-color: #21618c;
+}
+
+/* 页面标签页样式 */
+.page-tabs {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #bdc3c7;
+    -fx-border-width: 0 0 1px 0;
+}
+
+.page-tabs .tab-header-area {
+    -fx-padding: 0;
+}
+
+.page-tabs .tab {
+    -fx-background-color: #ecf0f1;
+    -fx-text-fill: #2c3e50;
+    -fx-background-radius: 4px 4px 0 0;
+    -fx-border-color: #bdc3c7;
+    -fx-border-width: 1px 1px 0 1px;
+    -fx-padding: 6px 12px;
+}
+
+.page-tabs .tab:selected {
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #2c3e50;
+    -fx-font-weight: bold;
+}
+
+.page-tabs .tab:hover {
+    -fx-background-color: #d5dbdb;
+}
+
+/* 画布样式 */
+.canvas {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #bdc3c7;
+    -fx-border-width: 1px;
+}
+
+.canvas-scroll {
+    -fx-background-color: #f8f9fa;
+    -fx-border-color: #bdc3c7;
+    -fx-border-width: 1px;
+}
+
+/* 属性面板样式 */
+.properties {
+    -fx-background-color: #ecf0f1;
+    -fx-border-color: #bdc3c7;
+    -fx-border-width: 0 0 0 1px;
+}
+
+.properties-title {
+    -fx-text-fill: #2c3e50;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+}
+
+.property-label {
+    -fx-text-fill: #2c3e50;
+    -fx-font-size: 10px;
+    -fx-alignment: center-right;
+}
+
+.property-field {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-width: 1px;
+    -fx-border-radius: 2px;
+    -fx-background-radius: 2px;
+    -fx-padding: 2px 4px;
+    -fx-font-size: 10px;
+}
+
+.property-field:focused {
+    -fx-border-color: #3498db;
+    -fx-border-width: 2px;
+}
+
+.no-selection {
+    -fx-text-fill: #7f8c8d;
+    -fx-font-style: italic;
+    -fx-alignment: center;
+}
+
+/* 状态栏样式 */
+.status-bar {
+    -fx-background-color: #34495e;
+    -fx-text-fill: white;
+    -fx-font-size: 10px;
+    -fx-border-color: #2c3e50;
+    -fx-border-width: 1px 0 0 0;
+}
+
+/* 按钮通用样式 */
+.button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-background-radius: 4px;
+    -fx-border-radius: 4px;
+    -fx-padding: 6px 12px;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #2980b9;
+}
+
+.button:pressed {
+    -fx-background-color: #21618c;
+}
+
+.button:disabled {
+    -fx-background-color: #bdc3c7;
+    -fx-text-fill: #7f8c8d;
+    -fx-cursor: default;
+}
+
+/* 主要按钮样式 */
+.button.primary {
+    -fx-background-color: #e74c3c;
+}
+
+.button.primary:hover {
+    -fx-background-color: #c0392b;
+}
+
+.button.primary:pressed {
+    -fx-background-color: #a93226;
+}
+
+/* 成功按钮样式 */
+.button.success {
+    -fx-background-color: #27ae60;
+}
+
+.button.success:hover {
+    -fx-background-color: #229954;
+}
+
+.button.success:pressed {
+    -fx-background-color: #1e8449;
+}
+
+/* 警告按钮样式 */
+.button.warning {
+    -fx-background-color: #f39c12;
+}
+
+.button.warning:hover {
+    -fx-background-color: #e67e22;
+}
+
+.button.warning:pressed {
+    -fx-background-color: #d35400;
+}
+
+/* 文本框样式 */
+.text-field {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-width: 1px;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-padding: 6px 8px;
+}
+
+.text-field:focused {
+    -fx-border-color: #3498db;
+    -fx-border-width: 2px;
+}
+
+/* 文本区域样式 */
+.text-area {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-width: 1px;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+}
+
+.text-area:focused {
+    -fx-border-color: #3498db;
+    -fx-border-width: 2px;
+}
+
+.text-area .content {
+    -fx-background-color: white;
+    -fx-padding: 6px 8px;
+}
+
+/* 下拉框样式 */
+.combo-box {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-width: 1px;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+}
+
+.combo-box:focused {
+    -fx-border-color: #3498db;
+    -fx-border-width: 2px;
+}
+
+.combo-box .arrow-button {
+    -fx-background-color: #ecf0f1;
+    -fx-border-color: #bdc3c7;
+    -fx-border-width: 0 0 0 1px;
+}
+
+.combo-box .arrow-button:hover {
+    -fx-background-color: #d5dbdb;
+}
+
+/* 滚动条样式 */
+.scroll-bar {
+    -fx-background-color: #ecf0f1;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #bdc3c7;
+    -fx-background-radius: 4px;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: #95a5a6;
+}
+
+.scroll-bar .thumb:pressed {
+    -fx-background-color: #7f8c8d;
+}
+
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-background-color: #ecf0f1;
+    -fx-border-color: #bdc3c7;
+}
+
+.scroll-bar .increment-button:hover,
+.scroll-bar .decrement-button:hover {
+    -fx-background-color: #d5dbdb;
+}
+
+/* 分隔符样式 */
+.separator {
+    -fx-background-color: #bdc3c7;
+}
+
+/* 标签样式 */
+.label {
+    -fx-text-fill: #2c3e50;
+}
+
+.label.title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+.label.subtitle {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #34495e;
+}
+
+.label.caption {
+    -fx-font-size: 10px;
+    -fx-text-fill: #7f8c8d;
+}
+
+/* 错误样式 */
+.error {
+    -fx-text-fill: #e74c3c;
+    -fx-border-color: #e74c3c;
+}
+
+.error .text-field {
+    -fx-border-color: #e74c3c;
+    -fx-border-width: 2px;
+}
+
+/* 成功样式 */
+.success {
+    -fx-text-fill: #27ae60;
+    -fx-border-color: #27ae60;
+}
+
+.success .text-field {
+    -fx-border-color: #27ae60;
+    -fx-border-width: 2px;
+}
+
+/* 警告样式 */
+.warning {
+    -fx-text-fill: #f39c12;
+    -fx-border-color: #f39c12;
+}
+
+.warning .text-field {
+    -fx-border-color: #f39c12;
+    -fx-border-width: 2px;
+}
+
+/* 禁用状态样式 */
+.disabled {
+    -fx-opacity: 0.6;
+}
+
+/* 选中状态样式 */
+.selected {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+}
+
+/* 悬停状态样式 */
+.hover {
+    -fx-background-color: #ecf0f1;
+}
+
+/* 焦点状态样式 */
+.focused {
+    -fx-border-color: #3498db;
+    -fx-border-width: 2px;
+}

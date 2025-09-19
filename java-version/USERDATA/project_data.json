@@ -1,0 +1,241 @@
+{
+  "pages": [
+    "1234",
+    "发生的"
+  ],
+  "currentPage": "1234",
+  "editResolution": "1366x768",
+  "pageContents": {
+    "1234": [
+      {
+        "editCanvasX": 26,
+        "editCanvasY": 23,
+        "editCanvasWidth": 123,
+        "editCanvasHeight": 149,
+        "editResolution": "1366x768",
+        "canvasDisplayWidth": 1209,
+        "canvasDisplayHeight": 680,
+        "functionType": "图片",
+        "labelData": {
+          "text": "",
+          "fontName": "Dialog",
+          "fontSize": 12,
+          "fontStyle": 1,
+          "colorRGB": -13421773,
+          "iconPath": "picture/1.jpg",
+          "originalFontSize": 12,
+          "horizontalAlignment": 0,
+          "verticalAlignment": 0,
+          "horizontalTextPosition": 11,
+          "verticalTextPosition": 0
+        }
+      },
+      {
+        "editCanvasX": 29,
+        "editCanvasY": 29,
+        "editCanvasWidth": 123,
+        "editCanvasHeight": 148,
+        "editResolution": "1366x768",
+        "canvasDisplayWidth": 1209,
+        "canvasDisplayHeight": 680,
+        "functionType": "纯文本",
+        "labelData": {
+          "text": "",
+          "fontName": "Dialog",
+          "fontSize": 12,
+          "fontStyle": 1,
+          "colorRGB": -13421773,
+          "originalFontSize": 12,
+          "horizontalAlignment": 0,
+          "verticalAlignment": 0,
+          "horizontalTextPosition": 11,
+          "verticalTextPosition": 0
+        }
+      },
+      {
+        "editCanvasX": 1044,
+        "editCanvasY": 0,
+        "editCanvasWidth": 165,
+        "editCanvasHeight": 23,
+        "editResolution": "1366x768",
+        "canvasDisplayWidth": 1209,
+        "canvasDisplayHeight": 680,
+        "functionType": "发送指令",
+        "targetPage": "发生的",
+        "commands": [
+          {
+            "name": "一路开",
+            "protocol": "TCP",
+            "ip": "127.0.0.1",
+            "port": "8080",
+            "command": "00 01 00 00 00 06 01 06 00 00 00 01",
+            "delay": "5"
+          },
+          {
+            "name": "三路开",
+            "protocol": "TCP",
+            "ip": "127.0.0.1",
+            "port": "8080",
+            "command": "00 01 00 00 00 06 01 06 00 02 00 01",
+            "delay": "2"
+          },
+          {
+            "name": "23",
+            "protocol": "TCP",
+            "ip": "192.168.1.100",
+            "port": "8080",
+            "command": "",
+            "delay": "TCP"
+          }
+        ],
+        "labelData": {
+          "text": "文本",
+          "fontName": "微软雅黑",
+          "fontSize": 16,
+          "fontStyle": 0,
+          "colorRGB": -1,
+          "iconPath": "appearance/黄渐变橙按钮原图.png",
+          "originalFontSize": 16,
+          "horizontalAlignment": 0,
+          "verticalAlignment": 0,
+          "horizontalTextPosition": 0,
+          "verticalTextPosition": 0
+        }
+      },
+      {
+        "editCanvasX": 1044,
+        "editCanvasY": 654,
+        "editCanvasWidth": 165,
+        "editCanvasHeight": 26,
+        "editResolution": "1366x768",
+        "canvasDisplayWidth": 1209,
+        "canvasDisplayHeight": 680,
+        "functionType": "实例组",
+        "instanceGroupName": "去玩儿",
+        "instanceGroupCommands": [
+          "一路开|TCP|127.0.0.1|8080|00 01 00 00 00 06 01 06 00 00 00 01|2",
+          "三路开|TCP|127.0.0.1|8080|00 01 00 00 00 06 01 06 00 02 00 01|2"
+        ],
+        "instanceGroupDelays": {
+          "一路开": "2",
+          "三路开": "2"
+        },
+        "labelData": {
+          "text": "文本",
+          "fontName": "SansSerif",
+          "fontSize": 16,
+          "fontStyle": 0,
+          "colorRGB": -1,
+          "iconPath": "appearance/灰色绿色渐变.png",
+          "originalFontSize": 16,
+          "horizontalAlignment": 0,
+          "verticalAlignment": 0,
+          "horizontalTextPosition": 0,
+          "verticalTextPosition": 0
+        }
+      },
+      {
+        "editCanvasX": 0,
+        "editCanvasY": 654,
+        "editCanvasWidth": 160,
+        "editCanvasHeight": 26,
+        "editResolution": "1366x768",
+        "canvasDisplayWidth": 1209,
+        "canvasDisplayHeight": 680,
+        "functionType": "发送指令",
+        "commands": [
+          {
+            "name": "开启指令",
+            "protocol": "TCP",
+            "ip": "127.0.0.1",
+            "port": "8080",
+            "command": "00 01 00 00 00 06 01 06 00 01 00 01",
+            "delay": "0"
+          },
+          {
+            "name": "关闭指令",
+            "protocol": "TCP",
+            "ip": "127.0.0.1",
+            "port": "8080",
+            "command": "00 01 00 00 00 06 01 06 00 01 00 00",
+            "delay": "0"
+          }
+        ],
+        "labelData": {
+          "text": "文本",
+          "fontName": "SansSerif",
+          "fontSize": 16,
+          "fontStyle": 0,
+          "colorRGB": -1,
+          "iconPath": "appearance/button/button1/btn1.png",
+          "originalFontSize": 16,
+          "horizontalAlignment": 0,
+          "verticalAlignment": 0,
+          "horizontalTextPosition": 0,
+          "verticalTextPosition": 0
+        }
+      },
+      {
+        "editCanvasX": 0,
+        "editCanvasY": 0,
+        "editCanvasWidth": 153,
+        "editCanvasHeight": 23,
+        "editResolution": "1366x768",
+        "canvasDisplayWidth": 1209,
+        "canvasDisplayHeight": 680,
+        "functionType": "页面跳转",
+        "targetPage": "发生的",
+        "labelData": {
+          "text": "文本",
+          "fontName": "SansSerif",
+          "fontSize": 16,
+          "fontStyle": 0,
+          "colorRGB": -1,
+          "iconPath": "appearance/灰黑渐变.png",
+          "originalFontSize": 16,
+          "horizontalAlignment": 0,
+          "verticalAlignment": 0,
+          "horizontalTextPosition": 0,
+          "verticalTextPosition": 0
+        }
+      },
+      {
+        "editCanvasX": 521,
+        "editCanvasY": 321,
+        "editCanvasWidth": 163,
+        "editCanvasHeight": 38,
+        "editResolution": "1366x768",
+        "canvasDisplayWidth": 1209,
+        "canvasDisplayHeight": 680,
+        "functionType": "实例组",
+        "instanceGroupName": "艾师傅",
+        "instanceGroupCommands": [
+          "去玩儿 (实例组)|GROUP||||3",
+          "三路开|TCP|127.0.0.1|8080|00 01 00 00 00 06 01 06 00 02 00 01|2",
+          "一路开|TCP|127.0.0.1|8080|00 01 00 00 00 06 01 06 00 00 00 01|0"
+        ],
+        "instanceGroupDelays": {
+          "去玩儿 (实例组)": "3",
+          "三路开": "2"
+        },
+        "labelData": {
+          "text": "文本",
+          "fontName": "SansSerif",
+          "fontSize": 16,
+          "fontStyle": 0,
+          "colorRGB": -1,
+          "iconPath": "appearance/btn1.png",
+          "originalFontSize": 16,
+          "horizontalAlignment": 0,
+          "verticalAlignment": 0,
+          "horizontalTextPosition": 0,
+          "verticalTextPosition": 0
+        }
+      }
+    ],
+    "发生的": []
+  },
+  "pageBackgrounds": {
+    "1234": "E:\\平板中控windows版\\java-version\\USERDATA\\background\\摄图网_600176319_酿酒的酒桶(仅交流学习使用).jpg"
+  }
+}

@@ -1,0 +1,55 @@
+# Android构建环境Docker镜像
+FROM ubuntu:20.04
+
+# 设置环境变量
+ENV DEBIAN_FRONTEND=noninteractive
+ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+ENV GRAALVM_HOME=/opt/graalvm
+ENV ANDROID_HOME=/opt/android-sdk
+ENV PATH=$GRAALVM_HOME/bin:$JAVA_HOME/bin:$ANDROID_HOME/platform-tools:$PATH
+
+# 安装基础工具
+RUN apt-get update && apt-get install -y \
+    openjdk-11-jdk \
+    maven \
+    wget \
+    unzip \
+    curl \
+    git \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
+# 下载并安装GraalVM
+RUN wget -O /tmp/graalvm.tar.gz \
+    https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-22.3.3/graalvm-ce-java11-linux-amd64-22.3.3.tar.gz \
+    && tar -xzf /tmp/graalvm.tar.gz -C /opt/ \
+    && mv /opt/graalvm-ce-java11-22.3.3 /opt/graalvm \
+    && rm /tmp/graalvm.tar.gz
+
+# 安装Native Image
+RUN /opt/graalvm/bin/gu install native-image
+
+# 下载并安装Android SDK
+RUN wget -O /tmp/android-sdk.zip \
+    https://dl.google.com/android/repository/commandlinetools-linux-8512546_latest.zip \
+    && mkdir -p /opt/android-sdk/cmdline-tools \
+    && unzip /tmp/android-sdk.zip -d /opt/android-sdk/cmdline-tools \
+    && mv /opt/android-sdk/cmdline-tools/cmdline-tools /opt/android-sdk/cmdline-tools/latest \
+    && rm /tmp/android-sdk.zip
+
+# 安装Android SDK组件
+RUN yes | /opt/android-sdk/cmdline-tools/latest/bin/sdkmanager --licenses \
+    && /opt/android-sdk/cmdline-tools/latest/bin/sdkmanager \
+    "platform-tools" \
+    "platforms;android-30" \
+    "build-tools;30.0.3" \
+    "ndk;21.4.7075529"
+
+# 设置工作目录
+WORKDIR /workspace
+
+# 构建脚本
+COPY build-android-docker.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/build-android-docker.sh
+
+CMD ["/usr/local/bin/build-android-docker.sh"]
