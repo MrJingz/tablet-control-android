@@ -24,8 +24,9 @@ jobs:
     - name: Install GraalVM JDK 17
       uses: graalvm/setup-graalvm@v1
       with:
-        version: '22.3.3'
+        version: 'latest'
         java-version: '17'
+        distribution: 'graalvm-community'
         components: 'native-image'
         github-token: ${{ secrets.GITHUB_TOKEN }}
         set-java-home: 'true'
@@ -56,12 +57,22 @@ jobs:
         java -version
         echo "JAVA_HOME: $JAVA_HOME"
         echo "GRAALVM_HOME: $GRAALVM_HOME"
+        echo "Maven version:"
+        mvn -version
+        echo "Android SDK:"
+        echo "ANDROID_HOME: $ANDROID_HOME"
+        echo "ANDROID_NDK_HOME: $ANDROID_NDK_HOME"
         echo "PATH: $PATH"
+
+    - name: Test Compilation
+      run: |
+        cd gluon-crossplatform
+        mvn clean compile -e
 
     - name: Build Android APK
       run: |
         cd gluon-crossplatform
-        mvn clean gluonfx:build -Pandroid
+        mvn gluonfx:build -Pandroid -e
         
     - name: Upload Build Artifacts
       uses: actions/upload-artifact@v4
