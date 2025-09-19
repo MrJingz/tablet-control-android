@@ -17,8 +17,8 @@
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         
-        <!-- JavaFX 版本 (JDK17兼容) -->
-        <javafx.version>17.0.2</javafx.version>
+        <!-- JavaFX 版本 (JDK17兼容，最新稳定版) -->
+        <javafx.version>17.0.6</javafx.version>
 
         <!-- Gluon Mobile 版本 (最新版本，支持Maven 3.9+) -->
         <gluonfx.version>1.0.27</gluonfx.version>
@@ -45,7 +45,7 @@
     </properties>
 
     <dependencies>
-        <!-- JavaFX 依赖 -->
+        <!-- JavaFX 依赖 (跨平台基础依赖) -->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
@@ -55,6 +55,18 @@
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-base</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-graphics</artifactId>
             <version>${javafx.version}</version>
         </dependency>
 
