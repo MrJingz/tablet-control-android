@@ -19,8 +19,8 @@
         <jackson.version>2.16.1</jackson.version>
         <logback.version>1.4.14</logback.version>
         
-        <!-- JavaFX 版本 (JDK17+) -->
-        <javafx.version>17.0.2</javafx.version>
+        <!-- JavaFX 版本 (JDK17+，最新稳定版) -->
+        <javafx.version>17.0.6</javafx.version>
         <javafx.maven.plugin.version>0.0.8</javafx.maven.plugin.version>
         
         <!-- GluonFX 版本 (跨平台支持) -->
