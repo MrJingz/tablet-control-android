@@ -32,6 +32,15 @@ jobs:
 
     - name: Setup Android SDK
       uses: android-actions/setup-android@v3
+      with:
+        api-level: 30
+        target: default
+        arch: x86_64
+
+    - name: Setup Android NDK
+      run: |
+        echo "y" | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --install "ndk;25.1.8937393"
+        echo "ANDROID_NDK_HOME=$ANDROID_HOME/ndk/25.1.8937393" >> $GITHUB_ENV
 
     - name: Cache Maven dependencies
       uses: actions/cache@v4
@@ -48,25 +57,10 @@ jobs:
         echo "GRAALVM_HOME: $GRAALVM_HOME"
         echo "PATH: $PATH"
 
-    - name: Test Basic Compilation
+    - name: Build Android APK
       run: |
         cd gluon-crossplatform
-        mvn clean compile
-
-    - name: Build JAR Package
-      run: |
-        cd gluon-crossplatform
-        mvn package -DskipTests
-
-    - name: List Build Output
-      run: |
-        cd gluon-crossplatform
-        find target -name "*.jar" -ls || echo "No JAR files found"
-
-    - name: Build Android APK (if JAR succeeds)
-      run: |
-        cd gluon-crossplatform
-        mvn gluonfx:build -Pandroid
+        mvn clean gluonfx:build -Pandroid
         
     - name: Upload Build Artifacts
       uses: actions/upload-artifact@v4
