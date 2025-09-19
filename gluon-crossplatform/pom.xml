@@ -210,6 +210,11 @@
                     <bundlesList>
                         <list>com.feixiang.tabletcontrol.i18n.messages</list>
                     </bundlesList>
+
+                    <!-- 初始化时构建配置 -->
+                    <initBuildTimeList>
+                        <list>com.feixiang.tabletcontrol.platform.PlatformManager</list>
+                    </initBuildTimeList>
                 </configuration>
             </plugin>
 
