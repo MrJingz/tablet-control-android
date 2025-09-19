@@ -17,8 +17,8 @@
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         
-        <!-- JavaFX 版本 (JDK11兼容) -->
-        <javafx.version>11.0.2</javafx.version>
+        <!-- JavaFX 版本 (JDK17兼容) -->
+        <javafx.version>17.0.2</javafx.version>
 
         <!-- Gluon Mobile 版本 (最新版本，支持Maven 3.9+) -->
         <gluonfx.version>1.0.27</gluonfx.version>
