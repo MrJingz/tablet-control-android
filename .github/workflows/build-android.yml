@@ -48,21 +48,33 @@ jobs:
         echo "GRAALVM_HOME: $GRAALVM_HOME"
         echo "PATH: $PATH"
 
-    - name: Test Compilation First
+    - name: Test Basic Compilation
       run: |
         cd gluon-crossplatform
-        mvn clean compile -X
+        mvn clean compile
 
-    - name: Build Android APK
+    - name: Build JAR Package
       run: |
         cd gluon-crossplatform
-        mvn gluonfx:build -Pandroid -X
+        mvn package -DskipTests
+
+    - name: List Build Output
+      run: |
+        cd gluon-crossplatform
+        find target -name "*.jar" -ls || echo "No JAR files found"
+
+    - name: Build Android APK (if JAR succeeds)
+      run: |
+        cd gluon-crossplatform
+        mvn gluonfx:build -Pandroid
         
-    - name: Upload APK
+    - name: Upload Build Artifacts
       uses: actions/upload-artifact@v4
       with:
-        name: tablet-control-android
-        path: gluon-crossplatform/target/gluonfx/aarch64-android/*.apk
+        name: tablet-control-build
+        path: |
+          gluon-crossplatform/target/*.jar
+          gluon-crossplatform/target/gluonfx/**/*.apk
         
     - name: Create Release
       if: github.ref == 'refs/heads/main'
